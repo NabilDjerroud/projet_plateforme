@@ -13,7 +13,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="index.php?controller=client">Client</a></li>
-            <li><a href="index.php?controller=user&function=index">Nouvel Utilisateur</a></li>
+            <li><a href="index.php?controller=utilisateur&function=index">Nouvel Utilisateur</a></li>
         </ul>
     </nav>
     <div class="container">
