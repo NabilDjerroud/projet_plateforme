@@ -1,18 +1,20 @@
 <?php
 function index()
 {
-    render("/nouvelUtilisateur.php");
+    render("/nouvelutilisateur.php");
 }
 
 function newuser()
 {
+    echo "9";
     require('database/connex.php');
-
+    echo "10";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérification et échappement des données POST
         $nom = isset($_POST['nom']) ? mysqli_real_escape_string($connex, $_POST['nom']) : '';
         $user_name = isset($_POST['user_name']) ? mysqli_real_escape_string($connex, $_POST['user_name']) : '';
         $date_naissance = isset($_POST['date_naissance']) ? mysqli_real_escape_string($connex, $_POST['date_naissance']) : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
 
         // Génération du sel pour le mot de passe
         $salt = "B13L&@u'";

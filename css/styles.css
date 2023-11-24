@@ -1,0 +1,69 @@
+/* Styles pour la barre de navigation */
+nav {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center; /* Centrer les éléments de la barre de navigation */
+  margin-bottom: 20px;
+}
+
+/* Utilisation de la police Ubuntu pour les éléments de la barre de navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif; /* Ajoutez la police Ubuntu */
+}
+
+/* Styles pour les éléments de la liste dans la barre de navigation */
+nav ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+/* Styles pour les liens dans la barre de navigation */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease; /* Animation de transition pour le changement de couleur */
+}
+
+/* Style pour les liens au survol dans la barre de navigation */
+nav ul li a:hover {
+  color: #ffcc00; /* Couleur au survol */
+}
+
+label {
+  color: #ffcc00;
+  font-family: "Ubuntu", sans-serif; /* Ajoutez la police Ubuntu */
+}
+
+/* Styles pour le formulaire */
+form {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Styles pour les éléments de formulaire */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  padding: 12px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+input[type="submit"] {
+  background-color: #ffcc00; /* Couleur de fond du bouton Soumettre */
+  color: #222; /* Couleur du texte du bouton Soumettre */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animation de transition pour le changement de couleur de fond */
+}
+
+input[type="submit"]:hover {
+  background-color: #e6b800; /* Couleur de fond au survol */
+}
