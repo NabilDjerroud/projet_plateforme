@@ -1,10 +1,10 @@
 <?php
 
-function safe($params){
+function safe($params) {
     return addslashes($params);
 }
 
-function render($file, $data = null){
+function render($file, $data = null) {
     $layout_file = VIEW_DIR.'/layouts/layout.php';
     ob_start();
     include_once(VIEW_DIR.$file);

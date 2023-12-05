@@ -14,6 +14,7 @@
 <body>
     <nav>
         <ul>
+            <li><a href="index.php">Accueil</a></li>
             <li><a href="login.php?controller=utilisateur&function=afficherconnexion">Se Connecter</a></li>
             <li><a href="index.php?controller=utilisateur&function=index">Nouvel Utilisateur</a></li>
             <li><a href="index.php?controller=utilisateur&function=afficherFormulaire">Liste des articles</a></li>
@@ -21,9 +22,14 @@
 
 
         </ul>
-        <div class="container">
-            <?php echo $content; ?>
-        </div>
+    </nav>
+
+
+    <div class="container">
+        <?php echo $content; ?>
+    </div>
+    <div class="article-list">
+    </div>
 
 </body>
 

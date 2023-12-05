@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="login.php?controller=utilisateur&function=afficherconnexion">Se Connecter</a></li>
+            <li><a href="index.php?controller=utilisateur&function=index">Nouvel Utilisateur</a></li>
+            <li><a href="index.php?controller=utilisateur&function=afficherFormulaire">Liste des articles</a></li>
+            <li><a href="logout.php">Déconnexion</a></li>
+
+
+        </ul>
+    </nav>
     <h2>Veuillez insérer vos identifiants pour vous connecter </h2>
 
     <form method="post" action="index.php?controller=utilisateur&function=verifierConnexion">
