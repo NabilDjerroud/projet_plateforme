@@ -4,6 +4,7 @@
 
 function index() {
     render("/nouvelUtilisateur.php");
+    
 }
 
 function newuser() {

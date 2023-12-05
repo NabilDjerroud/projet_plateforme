@@ -4,6 +4,9 @@ html {
   background-color: darkslategray;
 }
 
+body {
+  padding: 40px;
+}
 /* Styles pour la barre de navigation */
 nav {
   background-color: #222;
@@ -17,7 +20,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Ubuntu", sans-serif; 
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* Styles pour les éléments de la liste dans la barre de navigation */
@@ -41,7 +44,7 @@ nav ul li a:hover {
 
 label {
   color: #ffcc00;
-  font-family: "Ubuntu", sans-serif; 
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* Styles pour le formulaire */
@@ -75,14 +78,14 @@ input[type="submit"]:hover {
 }
 
 h2 {
-  font-family: "Ubuntu", sans-serif; 
+  font-family: "Ubuntu", sans-serif;
   text-align: center;
   margin-top: 40px;
   color: #f2f2f2;
 }
 
 p {
-  font-family: "Ubuntu", sans-serif; 
+  font-family: "Ubuntu", sans-serif;
   text-align: center;
 }
 
@@ -93,7 +96,7 @@ p {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  font-family: "Ubuntu", sans-serif; 
+  font-family: "Ubuntu", sans-serif;
   color: #333;
 }
 

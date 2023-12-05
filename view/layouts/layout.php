@@ -24,7 +24,7 @@
         </ul>
     </nav>
 
-
+    
     <div class="container">
         <?php echo $content; ?>
     </div>
