@@ -69,39 +69,51 @@ function afficherFormulaire()
     if ($result && mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
+            <!DOCTYPE html>
+            <html lang="en">
 
-            <p> <strong>Titre d'article: </strong>
-                <?= $row['titre']; ?>
-            </p>
-            <p> <strong>Contenu de l'article : </strong>
-                <?= $row['article']; ?>
-            </p>
-            <p> <strong>Date de l'article: </strong>
-                <?= $row['date_']; ?>
-            </p>
-            <p> <strong>Auteur de l'article : </strong>
-                <?= isset($row['user_id_utilisateur']) ? $row['user_id_utilisateur'] : "Auteur non défini"; ?>
-            </p>
-            <hr>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Liste des articles</title>
+                <link rel="stylesheet" href="css/styles.css"> <!-- Lien vers votre fichier CSS -->
+                <div class="article-container"> <!-- Ajout du conteneur autour des détails de l'article -->
+                    <h3>
+                        <?= $row['titre']; ?>
+                    </h3>
+                    <p>
+                        <?= $row['article']; ?>
+                    </p>
+                    <p class="article-date">
+                        <?= $row['date_']; ?>
+                    </p>
+                    <p> <strong>Auteur de l'article : </strong>
+                        <?= isset($row['user_id_utilisateur']) ? $row['user_id_utilisateur'] : "Auteur non défini"; ?>
+                    </p>
+                    <hr>
+                    <?php
+                    // Vérification de la session et de l'existence des clés pour afficher les liens
+                    if (isset($_SESSION['id']) && isset($row['user_id_utilisateur']) && $_SESSION['id'] == $row['user_id_utilisateur']) {
+                        ?>
+                        <a href="index.php?controller=article&function=supprimerArticle&id=<?= $row['id_forum']; ?> "
+                            class="button">Supprimer</a>
+                        <a href="index.php?controller=article&function=modifierArticle&id=<?= $row['id_forum']; ?>"
+                            class="button">Editer</a>
+                        <a href="index.php?controller=Article&function=creerArticle&id=<?= $row['id_forum']; ?>" class="button">Ajouter
+                            un article</a>
 
-            <?php
-            // Vérification de la session et de l'existence des clés pour afficher les liens
-            if (isset($_SESSION['id']) && isset($row['user_id_utilisateur']) && $_SESSION['id'] == $row['user_id_utilisateur']) {
-                ?>
-
-                <a href="index.php?controller=article&function=supprimerArticle&id=<?= $row['id_forum']; ?>">Supprimer</a>
-                <a href="index.php?controller=article&function=modifierArticle&id=<?= $row['id_forum']; ?>">Editer</a>
-
-
-                <hr>
-
+                        <hr>
+                        <?php
+                    }
+                    ?>
+                </div> <!-- Fermeture du conteneur .article-container -->
                 <?php
-            }
         }
     } else {
         echo "Aucun article trouvé.";
     }
 }
+
 
 
 
