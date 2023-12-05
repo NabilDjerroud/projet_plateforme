@@ -17,6 +17,9 @@
             <li><a href="login.php?controller=utilisateur&function=afficherconnexion">Se Connecter</a></li>
             <li><a href="index.php?controller=utilisateur&function=index">Nouvel Utilisateur</a></li>
             <li><a href="index.php?controller=utilisateur&function=afficherFormulaire">Liste des articles</a></li>
+            <li><a href="logout.php">Déconnexion</a></li>
+
+
         </ul>
         <div class="container">
             <?php echo $content; ?>

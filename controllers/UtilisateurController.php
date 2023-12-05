@@ -56,40 +56,55 @@ function verifierConnexion()
 }
 
 
+// UtilisateurController.php
+
 function afficherFormulaire()
 {
-    require('lib/checksession.php');
+    require('library/checksession.php');
     require('database/connex.php');
 
-    $sql = "SELECT id_forum, titre, article, date_, user_id_utilisateur FROM forum INNER JOIN utilisateur on user_id_utilisateur = id_utilisateur ORDER BY date";
-
+    $sql = "SELECT id_forum, titre, article, date_, user_id_utilisateur FROM forum INNER JOIN utilisateur on user_id_utilisateur = id_utilisateur ORDER BY date_";
     $result = mysqli_query($connex, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "Titre : " . $row['titre'] . "<br>";
-            echo "Article : " . $row['article'] . "<br>";
-            echo "Date : " . $row['date_'] . "<br>";
-            echo "Utilisateur : " . $row['user_id_utilisateur'] . "<br>";
-            echo "<hr>";
-        }
-        if ($_SESSION['id_utilisateur'] == $row['user_id_utilisateur']) {
-
             ?>
 
-            <a href="index.php?controller=article&function=supprimerArticle=<?= $row['id_forum']; ?>">Supprimer</a>
+            <p> <strong>Titre d'article: </strong>
+                <?= $row['titre']; ?>
+            </p>
+            <p> <strong>Contenu de l'article : </strong>
+                <?= $row['article']; ?>
+            </p>
+            <p> <strong>Date de l'article: </strong>
+                <?= $row['date_']; ?>
+            </p>
+            <p> <strong>Auteur de l'article : </strong>
+                <?= isset($row['user_id_utilisateur']) ? $row['user_id_utilisateur'] : "Auteur non défini"; ?>
+            </p>
+            <hr>
 
             <?php
+            // Vérification de la session et de l'existence des clés pour afficher les liens
+            if (isset($_SESSION['id']) && isset($row['user_id_utilisateur']) && $_SESSION['id'] == $row['user_id_utilisateur']) {
+                ?>
+
+                <a href="index.php?controller=article&function=supprimerArticle&id=<?= $row['id_forum']; ?>">Supprimer</a>
+                <a href="index.php?controller=article&function=modifierArticle&id=<?= $row['id_forum']; ?>">Editer</a>
+
+
+                <hr>
+
+                <?php
+            }
         }
     } else {
-        echo "Aucun formulaire trouvé.";
+        echo "Aucun article trouvé.";
     }
 }
 
 
-//  else {
-//         echo "Aucun forum trouvé.";
-//         exit();
-//     }
 
 
+
+?>

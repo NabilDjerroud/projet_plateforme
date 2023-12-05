@@ -4,16 +4,6 @@ require('library/checksession.php');
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Créer un Article</title>
-</head>
-
-<body>
     <h2>Créer un nouvel article</h2>
     <form method="post" action="index.php?controller=article&function=enregistrerArticle">
         <!-- Formulaire pour la création d'un article -->

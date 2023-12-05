@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Formulaire pour modifier l'article -->
+<h2>Modifier l'article</h2>
+<form method="post"
+    action="index.php?controller=article&function=enregistrerModification&id=<?= $article_details['id_forum']; ?>">
+    <!-- Champ caché pour l'ID de l'article -->
+    <input type="hidden" name="id" value="<?= $article_details['id_forum']; ?>">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Modifier l'article</title>
-</head>
+    <label for="titre">Titre de l'article</label><br>
+    <input type="text" name="titre" value="<?= $article_details['titre']; ?>" required><br>
 
-<body>
-    <form method="post" action="index.php?controller=article&function=modifier">
-        <label> Titre :
-            <input type="text" name="titre" placeholder="Titre">
-        </label>
-        <label> Contenu :
-            <textarea name="contenu" placeholder="Contenu de l'article"></textarea>
-        </label>
-        <input type="hidden" name="article_id" value="<?php echo $article_id; ?>">
-        <input type="submit" value="Modifier">
-    </form>
-</body>
+    <label for="article">Contenu de l'article</label><br>
+    <textarea name="article" rows="5" cols="50" required><?= $article_details['article']; ?></textarea><br>
 
-</html>
+    <label for="date_">Date de l'article</label><br>
+    <input type="date" name="date_" value="<?= $article_details['date_']; ?>"><br>
+
+    <input type="submit" value="Enregistrer les modifications">
+</form>

@@ -80,3 +80,8 @@ h2 {
   margin-top: 40px;
   color: #f2f2f2;
 }
+
+p {
+  font-family: "Ubuntu", sans-serif; /* Ajoutez la police Ubuntu */
+  text-align: center;
+}
