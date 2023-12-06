@@ -1,9 +1,9 @@
 <?php
 
-$connex = mysqli_connect('localhost', 'root', 'root', 'plateforme', '3308');
+$connex = mysqli_connect('localhost', 'root', 'root', 'plateforme', '3306');
 
-if (mysqli_connect_error()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if(mysqli_connect_error()) {
+    echo "Failed to connect to MySQL: ".mysqli_connect_error();
     exit();
 }
 
